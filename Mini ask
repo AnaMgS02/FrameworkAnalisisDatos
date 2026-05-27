@@ -1,0 +1,23 @@
+Para entender y utilizar estas columnas en tu análisis sobre el cambio generacional y el suicidio, primero debemos corregir un detalle importante: 
+cada fila del dataset NO representa a una sola persona 
+[1].Cada fila es un resumen agrupado (un agregado) de un país, un año, un género y un rango de edad específicos 
+[1].Aquí tienes la explicación sencilla de qué significan estas tres columnas económicas y cómo debes utilizarlas en tu proyecto:
+¿Qué significan exactamente? 
+gdp_for_year ($) (PIB anual): Es todo el dinero que produjo ese país en ese año específico. Mide el tamaño de la economía.
+gdp_per_capita ($) (PIB por persona): Es el PIB del país dividido por su población total. Indica la riqueza promedio de sus habitantes.
+HDI for year (Índice de Desarrollo Humano - IDH): Es una nota del 0 al 1 que da la ONU. Mide la calidad de vida combinando tres factores: riqueza (PIB), educación (alfabetización/escolaridad) y salud (esperanza de vida).
+
+¿Cómo utilizarlas en tu análisis? 
+(De la teoría al código)Estas columnas te permiten cruzar la economía con el bienestar social de los jóvenes a lo largo de los años. Así puedes usarlas:
+1. Usa gdp_per_capita ($) en lugar de gdp_for_year ($)Nunca compares el PIB total (gdp_for_year) entre países. 
+Un país gigante como EE. UU. siempre tendrá un PIB más alto que uno pequeño como Dinamarca, pero eso no significa que su población viva mejor. 
+El PIB per cápita iguala el terreno para la comparación. 
+Pregunta de análisis: ¿Tienen los países con crisis económicas repentinas (caídas drásticas de PIB per cápita) un aumento en el suicidio juvenil?
+2. Agrupa por generation o age para ver el impacto económicoEl dataset incluye la columna generation (Gen X, Millennials, Boomers) 
+[1]. Puedes analizar si las épocas de baja riqueza afectaron más a los jóvenes de antes que a los de ahora.
+Pregunta de análisis: Cuando el PIB per cápita era bajo en los años 90, ¿afectaba más a los jóvenes de esa época que a los jóvenes de los años 2010 en situaciones similares?
+3. Cuidado con los datos vacíos en HDI for yearSi exploras el dataset, verás que a la columna HDI for year le faltan muchísimos datos (muchas filas dicen NaN). 
+Esto ocurre porque la ONU no calculaba el IDH todos los años de forma masiva en las décadas de los 80 y 90.
+Consejo práctico: Para usar el IDH, filtra tu dataset y selecciona solo los años donde esta columna esté completa (usualmente del año 2000 en adelante) para no sesgar tus gráficos.
+4. Relaciona el IDH con el bienestar de la juventudEl IDH mide el desarrollo social. Un IDH cercano a 1 significa excelente acceso a salud y educación.
+Pregunta de análisis: ¿Un mayor desarrollo humano (IDH alto) mitiga las tasas de suicidio en jóvenes, o existen países desarrollados con tasas alarmantemente altas?
