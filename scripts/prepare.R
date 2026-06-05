@@ -1,0 +1,11 @@
+library(tidyverse)
+library(skimr)
+library(janitor)
+library(DataExplorer)
+library(corrplot)
+
+suicide <- read.csv("data/master.csv")
+dim(suicide)
+names(suicide)
+glimpse(suicide)
+skim(suicide)
